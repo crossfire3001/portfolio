@@ -64,6 +64,12 @@ body {
   color: var(--color-accent);
 }
 
+/* ── ACTIVE NAV LINK ── */
+.nav-links a.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
 .hamburger {
   display: none; /* hidden on desktop — shown on mobile via media query */
   background: none;
