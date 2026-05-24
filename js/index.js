@@ -71,3 +71,20 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible"); // ✅ add visible to THIS element
+        revealObserver.unobserve(entry.target); // ✅ stop watching it
+      }
+    });
+  },
+  { threshold: 0.15 },
+);
+
+// observe every reveal element
+document.querySelectorAll(".reveal").forEach((el) => {
+  revealObserver.observe(el); // ✅ watch each one
+});

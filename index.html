@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anuar | Developer</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <!-- NAVIGATION -->
@@ -13,6 +13,7 @@
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -27,13 +28,26 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="reveal">
       <h2>About me</h2>
       <p>Full-Stack dev with cool skill set.</p>
     </section>
 
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">HTML</div>
+        <div class="skill-card reveal">CSS</div>
+        <div class="skill-card reveal">JavaScript</div>
+        <div class="skill-card reveal">Git</div>
+        <div class="skill-card reveal">Responsive Design</div>
+        <div class="skill-card reveal">DOM Manipulation</div>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
-    <section id="projects">
+    <section id="projects" class="reveal">
       <h2>Projects</h2>
       <div id="projects-grid">
         <!-- cards will be injected here by JavaScript -->
@@ -41,7 +55,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="reveal">
       <h2>Get in touch</h2>
       <p>Open to freelance and full-time opportunities.</p>
       <a href="mailto:roman_emperor5@mail.ru" class="btn">Email me</a>
