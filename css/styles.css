@@ -1,0 +1,211 @@
+/* ── RESET & BASE ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #0f0f0f;
+  --color-surface: #1a1a1a;
+  --color-accent: #6c63ff;
+  --color-text: #e0e0e0;
+  --color-muted: #888;
+  --font-main: "Segoe UI", sans-serif;
+  --transition: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scroll — no JS needed for this part */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+/* ── NAVIGATION ── */
+#navbar {
+  position: fixed; /* stays at top while scrolling */
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid #222;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* ── ACTIVE NAV LINK ── */
+.nav-links a.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none; /* hidden on desktop — shown on mobile via media query */
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ── SECTIONS ── */
+section {
+  min-height: 100vh; /* each section fills the screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem; /* top padding accounts for fixed nav */
+}
+
+/* ── HERO ── */
+#hero h1 {
+  font-size: clamp(2rem, 6vw, 4rem); /* scales with screen size */
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--color-accent);
+}
+
+#hero p {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+/* ── BUTTON ── */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: opacity var(--transition);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ── ABOUT ── */
+#about {
+  background-color: var(--color-surface);
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  max-width: 600px;
+  color: var(--color-muted);
+}
+
+/* ── PROJECTS ── */
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.project-card {
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-4px); /* subtle lift on hover */
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+
+.project-card p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* ── CONTACT ── */
+#contact {
+  background-color: var(--color-surface);
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contact p {
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide links on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg);
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+
+  .nav-links.open {
+    display: flex; /* shown when hamburger is clicked */
+  }
+
+  .hamburger {
+    display: block; /* visible on mobile */
+  }
+}
